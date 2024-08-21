@@ -1,0 +1,93 @@
+{
+  "user": [
+    {
+      "id": "Ajith28",
+      "name": "Ajith",
+      "password": "ajith1234",
+      "email": "aj@gmail.com",
+      "dob": "2024-08-07",
+      "doj": "2024-08-27",
+      "role": "admin"
+    },
+    {
+      "id": "Dhruv10",
+      "name": "Dhruv",
+      "password": "dhruv1234",
+      "email": "dh@gnmail.com",
+      "dob": "2024-08-07",
+      "doj": "2024-08-09",
+      "role": "user"
+    },
+    {
+      "id": "Sugan15",
+      "name": "Sugan",
+      "email": "sugan@gmail.com",
+      "doj": "2024-08-14",
+      "role": "user"
+    },
+    {
+      "id": "Valli12",
+      "name": "valli",
+      "email": "giuhiu@jhygy.com",
+      "doj": "2024-08-16",
+      "role": "user"
+    }
+  ],
+  "roleaccess": [
+    {
+      "role": "admin",
+      "menu": "customer",
+      "haveadd": true,
+      "haveedit": true,
+      "havedelete": true
+    },
+    {
+      "role": "admin",
+      "menu": "supplier",
+      "haveadd": true,
+      "haveedit": true,
+      "havedelete": true
+    },
+    {
+      "role": "user",
+      "menu": "customer",
+      "haveadd": false,
+      "haveedit": false,
+      "havedelete": false
+    },
+    {
+      "role": "user1",
+      "menu": "customer",
+      "haveadd": false,
+      "haveedit": false,
+      "havedelete": false
+    }
+  ],
+  "customer": [
+    {
+      "code": 1,
+      "name": "Chris",
+      "email": "chris@in.com"
+    },
+    {
+      "code": 2,
+      "name": "Lynn",
+      "email": "lynn@in.com"
+    },
+    {
+      "code": 3,
+      "name": "Tim",
+      "email": "tim@in.com"
+    },
+    {
+      "code": 4,
+      "name": "Southee",
+      "email": "southee@in.com"
+    },
+    {
+      "code": 5,
+      "name": "boult",
+      "email": "bould@in.com"
+    }
+  ]
+}
