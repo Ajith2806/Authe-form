@@ -3,34 +3,34 @@
     {
       "id": "Ajith28",
       "name": "Ajith",
-      "password": "ajith1234",
       "email": "aj@gmail.com",
-      "dob": "2024-08-07",
       "doj": "2024-08-27",
-      "role": "admin"
-    },
-    {
-      "id": "Dhruv10",
-      "name": "Dhruv",
-      "password": "dhruv1234",
-      "email": "dh@gnmail.com",
-      "dob": "2024-08-07",
-      "doj": "2024-08-09",
-      "role": "user"
+      "role": "admin",
+      "password": "ajith1234"
     },
     {
       "id": "Sugan15",
       "name": "Sugan",
       "email": "sugan@gmail.com",
-      "doj": "2024-08-14",
-      "role": "user"
+      "doj": "2024-08-23",
+      "role": "user",
+      "password": "sugan1234"
     },
     {
-      "id": "Valli12",
-      "name": "valli",
-      "email": "giuhiu@jhygy.com",
+      "id": "Thooriga14",
+      "name": "Thooriga",
+      "email": "thoori@gmail.com",
       "doj": "2024-08-16",
-      "role": "user"
+      "role": "user",
+      "password": "thooriga1234"
+    },
+    {
+      "id": "Dhruv10",
+      "name": "Dhruv",
+      "email": "dhr@gmail.com",
+      "doj": "2024-08-16",
+      "role": "user",
+      "password": "dhruv1234"
     }
   ],
   "roleaccess": [
@@ -67,27 +67,32 @@
     {
       "code": 1,
       "name": "Chris",
-      "email": "chris@in.com"
+      "email": "chris@in.com",
+      "id": "2932"
     },
     {
       "code": 2,
       "name": "Lynn",
-      "email": "lynn@in.com"
+      "email": "lynn@in.com",
+      "id": "d340"
     },
     {
       "code": 3,
       "name": "Tim",
-      "email": "tim@in.com"
+      "email": "tim@in.com",
+      "id": "b082"
     },
     {
       "code": 4,
       "name": "Southee",
-      "email": "southee@in.com"
+      "email": "southee@in.com",
+      "id": "6b25"
     },
     {
       "code": 5,
       "name": "boult",
-      "email": "bould@in.com"
+      "email": "bould@in.com",
+      "id": "aa28"
     }
   ]
 }
