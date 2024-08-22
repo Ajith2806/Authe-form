@@ -9,13 +9,14 @@ const Adduser = () => {
     const [email, emailchange] = useState('');
     const [doj, dojchange] = useState('');
     const [role, rolechange] = useState('');
+    const [password, passwordchange] = useState('');
     const dispatch=useDispatch();
     const navigate=useNavigate();
 
     
     const handlesubmit = (e) => {
         e.preventDefault();
-        const userobj = { name, email, doj, role ,id };
+        const userobj = { name, email, doj, role ,id ,password};
         dispatch(FunctionAddUser(userobj));
         navigate('/user');
     }
@@ -43,8 +44,12 @@ const Adduser = () => {
                             </div>
                             <div className="col-lg-12">
                                 <div className="form-group">
-                                    <label>ID</label>
+                                    <label>User Id</label>
                                     <input value={id} onChange={e => idchange(e.target.value)} className="form-control"></input>
+                                </div>
+                                <div className="form-group">
+                                    <label>password</label>
+                                    <input type="password" value={password} onChange={e => passwordchange(e.target.value)} className="form-control"></input>
                                 </div>
                             </div>
                             <div className="col-lg-12">
@@ -57,6 +62,7 @@ const Adduser = () => {
                                 <div className="form-group">
                                     <label>Role</label>
                                     <select value={role} onChange={e => rolechange(e.target.value)} className="form-control">
+                                        <option disabled>Select Role</option>
                                         <option value="admin">Admin</option>
                                         <option value="user">user</option>
                                     </select>

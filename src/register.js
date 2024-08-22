@@ -60,7 +60,7 @@ const Register = () => {
 
     const handlesubmit = (e) => {
             e.preventDefault();
-            let regobj = { id, name, password, email,dob, doj, role, doj };
+            let regobj = { id, name, password, email,dob, doj, role};
             if (IsValidate()) {
             //console.log(regobj);
             fetch("http://localhost:8000/user", {

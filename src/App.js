@@ -38,3 +38,6 @@ function App() {
 }
 
 export default App;
+
+
+// to run Json file = npx json-server --watch  db.json --port 8000

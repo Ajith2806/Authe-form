@@ -7,7 +7,7 @@ const initialstate = {
     errmessage: ''
 }
 
-export const Reducer = (state = initialstate, action) => {
+              export const Reducer = (state = initialstate, action) => {
     switch (action.type) {
         case MAKE_REQUEST:
             return {
@@ -18,7 +18,7 @@ export const Reducer = (state = initialstate, action) => {
             return {
                 ...state,
                 loading: false,
-                errmessage: action.payload
+                    errmessage: action.payload
             }
         case GET_USER_LIST:
             return {
@@ -27,7 +27,7 @@ export const Reducer = (state = initialstate, action) => {
                 userlist:action.payload,
                 userobj:{}
             }
-            case DELETE_USER:return{
+              case DELETE_USER:return{
                 ...state,
                 loading:false
             }

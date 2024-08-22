@@ -8,7 +8,8 @@ const Updateuser = () => {
     const [name, namechange] = useState('');
     const [email, emailchange] = useState('');
     const [doj, dojchange] = useState('');
-    const [role, rolechange] = useState('staff');
+    const [role, rolechange] = useState('');
+    const [password, passwordchange] = useState('');
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const { code } = useParams();
@@ -18,7 +19,7 @@ const Updateuser = () => {
 
     const handlesubmit = (e) => {
         e.preventDefault();
-        const userobj = { id, name, email, doj, role };
+        const userobj = { id, name, email, doj, role ,password};
         dispatch(FunctionUpdateUser(userobj,id));
         navigate('/user');
     }
@@ -34,6 +35,7 @@ const Updateuser = () => {
             emailchange(userobj.email);
             dojchange(userobj.doj);
             rolechange(userobj.role);
+            passwordchange(userobj.password);
         }
     }, [userobj])
 
@@ -42,16 +44,23 @@ const Updateuser = () => {
             <form onSubmit={handlesubmit}>
                 <div className="card">
                     <div className="card-header" style={{ textAlign: 'left' }}>
-                        <h2>Add User</h2>
+                        <h2>Edit User</h2>
                     </div>
                     <div className="card-body" style={{ textAlign: 'left' }}>
                         <div className="row">
                             <div className="col-lg-12">
                                 <div className="form-group">
-                                    <label>Id</label>
+                                    <label>User</label>
                                     <input value={id || ''} disabled="disabled" className="form-control"></input>
                                 </div>
+                               
                             </div>
+                            {/* <div className="col-lg-12">
+                                <div className="form-group">
+                                    <label>Password</label>
+                                    <input value={password || ''} onChange={e => passwordchange(e.target.value)} className="form-control"></input>
+                                </div>
+                            </div> */}
                             <div className="col-lg-12">
                                 <div className="form-group">
                                     <label>Name</label>
@@ -74,8 +83,9 @@ const Updateuser = () => {
                                 <div className="form-group">
                                     <label>Role</label>
                                     <select value={role || ''} onChange={e => rolechange(e.target.value)} className="form-control">
+                                        <option disabled>Select Role</option>
                                         <option value="admin">Admin</option>
-                                        <option value="staff">Staff</option>
+                                        <option value="user">User</option>
                                     </select>
                                 </div>
                             </div>
