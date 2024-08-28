@@ -1,10 +1,10 @@
-import React from "react";
+import React, { Component } from "react";
 import { useEffect, useState  } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { FetchUserList,Removeuser} from "../Redux/Action";
-import { useNavigate } from "react-router-dom";
+import { useNavigate , useParams } from "react-router-dom";
 
 const Userlisting = (props) => {
 
@@ -13,6 +13,7 @@ const [haveedit, editchange] = useState(false);
 const [haveview, viewchange] = useState(false);
 const [haveadd, addchange] = useState(false);
 const [haveremove, removechange] = useState(false);
+const { code } = useParams();
 const navigate=useNavigate();
 
 
@@ -49,7 +50,7 @@ const navigate=useNavigate();
             if (res.length > 0) {
                 viewchange(true);
                 let userobj = res[0];
-                // editchange(userobj.haveedit);
+                editchange(userobj.haveedit);
                 addchange(userobj.haveadd);
                 removechange(userobj.havedelete);
             }else{
@@ -68,20 +69,78 @@ const navigate=useNavigate();
             toast.warning('You are not having access to add user');
         }
     }
-    const handleedit = (res) => {
+    const handleedit = (code) => {
+        // console.log('code before navigate:', code);
         if(haveedit){
-        toast.success('Access Granted for Editing')
-        navigate('/user/edit/:code');
-        console.log(res);
-        let userobj = res[0];
-        editchange(userobj.haveedit);
-        }
+        toast.success('Access Granted for editing')
         
-        else{
-            toast.warning('You are not having access to Edit user');
+        navigate(`/user/edit/${code}`);
+        }else{
+            toast.warning('You are not having access to edit user');
         }
     }
-   
+    // 
+    // const handleedit = (res) => {
+    //     const role = res?.role;
+    //     console.log("role:", role);
+    //     // if(haveedit)
+    //         if(role ==='admin' || role === 'admin') 
+    //                {
+    //     toast.success('Access Granted for Editing')
+    //     navigate('/user/edit');
+    //     console.log(res);
+    //     let userobj = res[0];
+    //     editchange(userobj.haveedit);
+    //     }
+        
+    //     else{
+    //         toast.warning('You are not having access to Edit user');
+    //     }
+    // }
+
+    //
+    // const handleedit = (res) => {
+    //     const role = res?.role;
+    //     console.log("Role:", role); // Debugging line
+    //     if (role === 'admin' || role === 'editor') {
+    //         toast.success('Access Granted for Editing');
+    //         navigate(`/user/edit/${res?.id}`);
+    //     } else {
+    //         toast.warning('You do not have access to edit this user');
+    //     }
+    // }
+
+    // 
+
+    
+    // const handleedit = (res) => {
+    //     const role = res?.role;  // Ensure that 'role' is extracted correctly
+    //     console.log("User role:", role); // Debugging: Check the value of role
+    
+    //     if (role === 'admin' || role === 'editor') 
+    //         {
+    //         toast.success('Access Granted for Editing');
+    //         navigate(`/user/edit/${res?.code}`); // Ensure 'code' exists in the 'res' object
+    //         console.log("Navigation success"); // Debugging: Confirm navigation is triggered
+    //     } else {
+    //         toast.warning('You are not having access to Edit user');
+    //     }
+    // };
+    // 
+
+
+
+
+//    const handleedit =()=>{
+//     if(!post || !user)return;
+//     if(user.role ==='admin'){
+//         toast.success('Access Granted for Editing')
+//         navigate('/user/edit/:code');
+
+//     }else{
+//                toast.warning('You are not having access to Edit user');
+//              }
+//    }
     // 
     useEffect(() => {
         props.loaduser();
@@ -106,6 +165,7 @@ const navigate=useNavigate();
             props.user.errmessage ? <div><h2>{props.user.errmessage}</h2></div> :
 
                 <div>
+                    
                     <div className="card">
                         <div className="card-header" >
                             {/* <Link to={'/user/add'} onClick={handleadd} className="btn btn-success">Add User [+]</Link> */}
@@ -113,14 +173,14 @@ const navigate=useNavigate();
                         </div>
                         <div className="card-body">
                             <table className="table table-bordered">
-                                <thead className="bg-dark text-white">
-                                    <tr>
-                                        <td className="listhead" >User Id</td>
-                                        <td>Name</td>
-                                        <td>Email</td>
-                                        <td>DOJ</td>
-                                        <td>Role</td>
-                                        <td>Action</td>
+                                <thead className="table-header">
+                                    <tr className="listhead">
+                                        <th  >User Id</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>DOJ</th>
+                                        <th>Role</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -134,7 +194,7 @@ const navigate=useNavigate();
                                                 <td>{item.role}</td>
                                                 <td>
                                                     {/* <Link to={'/user/edit/' + item.id}  className="btn btn-primary">Edit</Link> | */}
-                                                    <button  onClick={handleedit} className="btn btn-primary">Edit (+)</button>
+                                                    <button  onClick={()=>handleedit(item.id)} className="btn btn-primary">Edit </button> |
                                                     <button onClick={() => { handleremove(item.id) }} className="btn btn-danger">Delete</button>
                                                 </td>
                                             </tr>

@@ -23,6 +23,8 @@ const Adduser = () => {
 
     return (
         <div>
+             <div className="offset-lg-3 col-lg-6" style={{ marginTop: '100px' }}>
+
             <form onSubmit={handlesubmit}>
                 <div className="card">
                     <div className="card-header" style={{ textAlign: 'left' }}>
@@ -62,7 +64,7 @@ const Adduser = () => {
                                 <div className="form-group">
                                     <label>Role</label>
                                     <select value={role} onChange={e => rolechange(e.target.value)} className="form-control">
-                                        <option disabled>Select Role</option>
+                                        <option >Select Role</option>
                                         <option value="admin">Admin</option>
                                         <option value="user">user</option>
                                     </select>
@@ -78,6 +80,7 @@ const Adduser = () => {
 
                 </div>
             </form>
+            </div>
         </div>
     );
 }

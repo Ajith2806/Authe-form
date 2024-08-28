@@ -126,7 +126,7 @@ const Register = () => {
                                     <div className="form-group">
                                         <label>Role <span className="errmsg">*</span></label>
                                         <select value={role} onChange={e => rolechange(e.target.value)} className="form-control">
-                                            <option disabled defaultChecked>select Role</option>
+                                            <option  >select Role</option>
                                             <option value="admin">Admin</option>
                                             <option value="user">User</option>
                                            
