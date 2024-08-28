@@ -1,14 +1,6 @@
 {
   "user": [
     {
-      "id": "Ajith28",
-      "name": "Ajith",
-      "email": "aj@gmail.com",
-      "doj": "2024-08-27",
-      "role": "admin",
-      "password": "ajith1234"
-    },
-    {
       "id": "Sugan15",
       "name": "Sugan",
       "email": "sugan@gmail.com",
@@ -31,6 +23,56 @@
       "doj": "2024-08-16",
       "role": "user",
       "password": "dhruv1234"
+    },
+    {
+      "id": "Ajith28",
+      "name": "Ajith",
+      "password": "ajith1234",
+      "email": "Aj@gmail.com",
+      "dob": "2024-08-22",
+      "doj": "2024-08-30",
+      "role": "admin"
+    },
+    {
+      "id": "Rajesh",
+      "name": "Rajesh",
+      "password": "rajesh1234",
+      "email": "raj@gmail.com",
+      "dob": "2024-08-13",
+      "doj": "2024-08-23",
+      "role": "user"
+    },
+    {
+      "id": "Kiruba12",
+      "name": "Kiruba",
+      "email": "kiru@gmail.com",
+      "doj": "2024-08-13",
+      "role": "user",
+      "password": "kiruba1234"
+    },
+    {
+      "id": "Prabu12",
+      "name": "Prabu",
+      "email": "prabu@gmail.c",
+      "doj": "2024-08-14",
+      "role": "user",
+      "password": "prabu1234"
+    },
+    {
+      "id": "Shruthi12",
+      "name": "Shruthi",
+      "email": "sh@gmail.com",
+      "doj": "2024-08-10",
+      "role": "user",
+      "password": "shruthi1234"
+    },
+    {
+      "id": "Divya12",
+      "name": "Divya",
+      "email": "divya@gmail.com",
+      "doj": "2024-08-28",
+      "role": "user",
+      "password": "divya1234"
     }
   ],
   "roleaccess": [
@@ -39,28 +81,32 @@
       "menu": "customer",
       "haveadd": true,
       "haveedit": true,
-      "havedelete": true
+      "havedelete": true,
+      "id": "5de0"
     },
     {
       "role": "admin",
       "menu": "supplier",
       "haveadd": true,
       "haveedit": true,
-      "havedelete": true
+      "havedelete": true,
+      "id": "aa03"
     },
     {
       "role": "user",
       "menu": "customer",
       "haveadd": false,
       "haveedit": false,
-      "havedelete": false
+      "havedelete": false,
+      "id": "a95c"
     },
     {
       "role": "user1",
       "menu": "customer",
       "haveadd": false,
       "haveedit": false,
-      "havedelete": false
+      "havedelete": false,
+      "id": "45c8"
     }
   ],
   "customer": [
